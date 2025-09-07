@@ -1,8 +1,8 @@
 {
-  "name": "cc-lovable",
+  "name": "cc-zhensphere",
   "version": "1.0.0",
   "private": true,
-  "description": "CC Lovable Development Environment",
+  "description": "CC ZhenSphere Development Environment",
   "workspaces": [
     "apps/web"
   ],

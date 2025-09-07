@@ -93,17 +93,17 @@ class TerminalUI:
         self.console.print(panel)
     
     def ascii_logo(self):
-        """Display ASCII art logo for Claudable"""
-        # Create "CLAUDABLE" logo with orange color from the image
+        """Display ASCII art logo for ZhenSphere"""
+        # Create "ZHENSPHERE" logo with orange color from the image
         logo_text = Text()
         
-        # CLAUDABLE ASCII art
-        logo_text.append(" ██████╗██╗      █████╗ ██╗   ██╗██████╗  █████╗ ██████╗ ██╗     ███████╗\n", style="rgb(182,109,77)")
-        logo_text.append("██╔════╝██║     ██╔══██╗██║   ██║██╔══██╗██╔══██╗██╔══██╗██║     ██╔════╝\n", style="rgb(182,109,77)")
-        logo_text.append("██║     ██║     ███████║██║   ██║██║  ██║███████║██████╔╝██║     █████╗  \n", style="rgb(182,109,77)")
-        logo_text.append("██║     ██║     ██╔══██║██║   ██║██║  ██║██╔══██║██╔══██╗██║     ██╔══╝  \n", style="rgb(182,109,77)")
-        logo_text.append("╚██████╗███████╗██║  ██║╚██████╔╝██████╔╝██║  ██║██████╔╝███████╗███████╗\n", style="rgb(182,109,77)")
-        logo_text.append(" ╚═════╝╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝╚══════╝", style="rgb(182,109,77)")
+        # ZHENSPHERE ASCII art
+        logo_text.append(" ______                ____        _                   \n", style="rgb(182,109,77)")
+        logo_text.append("|__  / |__   ___ _ __ / ___| _ __ | |__   ___ _ __ ___ \n", style="rgb(182,109,77)")
+        logo_text.append("  / /| '_ \\ / _ \\ '_ \\\\___ \\| '_ \\| '_ \\ / _ \\ '__/ _ \\\n", style="rgb(182,109,77)")
+        logo_text.append(" / /_| | | |  __/ | | |___) | |_) | | | |  __/ | |  __/\n", style="rgb(182,109,77)")
+        logo_text.append("/____|_| |_|\\___|_| |_|____/| .__/|_| |_|\\___|_|  \\___|\n", style="rgb(182,109,77)")
+        logo_text.append("                            |_|                        ", style="rgb(182,109,77)")
         
         self.console.print()
         

@@ -28,7 +28,7 @@ interface ChatInputProps {
 export default function ChatInput({ 
   onSendMessage, 
   disabled = false, 
-  placeholder = "Ask Claudable...",
+  placeholder = "Ask ZhenSphere...",
   mode = 'act',
   onModeChange,
   projectId,

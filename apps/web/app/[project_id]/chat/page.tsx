@@ -1476,7 +1476,7 @@ export default function ChatPage({ params }: Params) {
                   runAct(message, images);
                 }}
                 disabled={isRunning}
-                placeholder={mode === 'act' ? "Ask Claudable..." : "Chat with Claudable..."}
+                placeholder={mode === 'act' ? "Ask ZhenSphere..." : "Chat with ZhenSphere..."}
                 mode={mode}
                 onModeChange={setMode}
                 projectId={projectId}
@@ -1903,7 +1903,7 @@ export default function ChatPage({ params }: Params) {
                         animate={{ opacity: 1, scale: 1 }}
                         className="text-center"
                       >
-                        {/* Claudable Symbol with loading spinner */}
+                        {/* ZhenSphere Symbol with loading spinner */}
                         <div className="w-40 h-40 mx-auto mb-6 relative">
                           <div 
                             className="w-full h-full"
@@ -1964,7 +1964,7 @@ export default function ChatPage({ params }: Params) {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
                       >
-                        {/* Claudable Symbol */}
+                        {/* ZhenSphere Symbol */}
                         {hasActiveRequests ? (
                           <>
                             <div className="w-40 h-40 mx-auto mb-6 relative">
@@ -2023,7 +2023,7 @@ export default function ChatPage({ params }: Params) {
                               onClick={!isRunning && !isStartingPreview ? start : undefined}
                               className={`w-40 h-40 mx-auto mb-6 relative ${!isRunning && !isStartingPreview ? 'cursor-pointer group' : ''}`}
                             >
-                              {/* Claudable Symbol with rotating animation when starting */}
+                              {/* ZhenSphere Symbol with rotating animation when starting */}
                               <MotionDiv
                                 className="w-full h-full"
                                 animate={isStartingPreview ? { rotate: 360 } : {}}

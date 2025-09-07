@@ -128,7 +128,7 @@ export default function ServiceConnectionModal({
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             token_id: savedToken.id,
-            repo_name: `cc-lovable-${projectId}`,
+            repo_name: `cc-zhensphere-${projectId}`,
             private: false
           })
         });
@@ -163,7 +163,7 @@ export default function ServiceConnectionModal({
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             token_id: savedToken.id,
-            project_name: `cc-lovable-${projectId}`,
+            project_name: `cc-zhensphere-${projectId}`,
             db_pass: dbPass,
             region: 'us-east-1'
           })
@@ -196,7 +196,7 @@ export default function ServiceConnectionModal({
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             token_id: savedToken.id,
-            project_name: `cc-lovable-${projectId}`
+            project_name: `cc-zhensphere-${projectId}`
           })
         });
         
@@ -232,7 +232,7 @@ export default function ServiceConnectionModal({
           instructions: [
             "Go to GitHub → Settings → Developer settings → Personal access tokens → Tokens (classic)",
             "Click 'Generate new token' → 'Generate new token (classic)'",
-            "Enter a descriptive name (e.g., 'Clovable Integration')",
+            "Enter a descriptive name (e.g., 'ZhenSphere Integration')",
             "Select expiration (recommend 'No expiration' for development)",
             "Select scopes: 'repo' (full repository access) and 'user' (user profile access)",
             "Click 'Generate token' and copy the token immediately (you won't see it again!)",
@@ -261,7 +261,7 @@ export default function ServiceConnectionModal({
           instructions: [
             "Go to Supabase Dashboard → Account → Access Tokens",
             "Click 'Generate new token'",
-            "Enter a descriptive name (e.g., 'Clovable Integration')",
+            "Enter a descriptive name (e.g., 'ZhenSphere Integration')",
             "Select appropriate expiration date (or no expiration for development)",
             "Click 'Generate token' and copy it immediately",
             "Paste the token below and click 'Save Token'"
@@ -282,7 +282,7 @@ export default function ServiceConnectionModal({
           instructions: [
             "Go to Vercel Dashboard → Settings → Tokens",
             "Click 'Create Token'",
-            "Enter a descriptive name (e.g., 'Clovable Integration')",
+            "Enter a descriptive name (e.g., 'ZhenSphere Integration')",
             "Select appropriate scope (recommend 'Full Access' for development)",
             "Set expiration date or select 'No Expiration'",
             "Click 'Create Token' and copy the token immediately",

@@ -137,7 +137,7 @@ async def connect_github_repository(
         else:
             # Use standard project structure: ./data/projects/{project_id}/repo
             from pathlib import Path
-            root_dir = Path(__file__).parent.parent.parent.parent  # Get to cc-lovable root
+            root_dir = Path(__file__).parent.parent.parent.parent  # Get to cc-zhensphere root
             repo_path = root_dir / "data" / "projects" / project.id / "repo"
             repo_path = str(repo_path.resolve())
             

@@ -28,7 +28,7 @@ class GitHubService:
         self.headers = {
             "Authorization": f"token {token}",
             "Accept": "application/vnd.github.v3+json",
-            "User-Agent": "Clovable/1.0"
+            "User-Agent": "ZhenSphere/1.0"
         }
     
     async def check_token_validity(self) -> Dict[str, Any]:

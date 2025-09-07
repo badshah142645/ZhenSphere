@@ -23,7 +23,7 @@ import os
 
 configure_logging()
 
-app = FastAPI(title="Clovable API")
+app = FastAPI(title="ZhenSphere API")
 
 # Middleware to suppress logging for specific endpoints
 class LogFilterMiddleware(BaseHTTPMiddleware):

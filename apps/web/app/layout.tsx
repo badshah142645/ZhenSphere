@@ -7,10 +7,10 @@ import Header from '@/components/Header'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Claudable',
-  description: 'Claudable Application',
+  title: 'ZhenSphere',
+  description: 'ZhenSphere Application',
   icons: {
-    icon: '/Claudable_Icon.png',
+    icon: '/ZhenSphere_Icon.png',
   },
 }
 

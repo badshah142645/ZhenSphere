@@ -966,7 +966,7 @@ export default function HomePage() {
                     lineHeight: '72px'
                   }}
                 >
-                  Claudable
+                  ZhenSphere
                 </h1>
               </div>
               <p className="text-xl text-gray-700 dark:text-white/80 font-light tracking-tight">
@@ -1016,7 +1016,7 @@ export default function HomePage() {
                 <textarea
                   value={prompt}
                   onChange={(e) => setPrompt(e.target.value)}
-                  placeholder="Ask Claudable to create a blog about..."
+                  placeholder="Ask ZhenSphere to create a blog about..."
                   disabled={isCreatingProject}
                   className="flex w-full rounded-md px-2 py-2 placeholder:text-gray-400 dark:placeholder:text-white/50 focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50 resize-none text-[16px] leading-snug md:text-base focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent focus:bg-transparent flex-1 text-gray-900 dark:text-white overflow-y-auto"
                   style={{ height: '120px' }}

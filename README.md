@@ -1,6 +1,6 @@
-# Claudable
+# ZhenSphere
 
-<img src="./assets/Claudable.png" alt="Claudable" style="width: 100%;" />
+<img src="./assets/ZhenSphere.png" alt="ZhenSphere" style="width: 100%;" />
 <div align="center">
 <h3>Connect CLI Agent • Build what you want • Deploy instantly</h3>
 
@@ -18,19 +18,19 @@
 </a>
 </p>
 
-## What is Claudable?
+## What is ZhenSphere?
 
-Claudable is a powerful Next.js-based web app builder that combines **C**laude Code's (Cursor CLI also supported!) advanced AI agent capabilities with **Lovable**'s simple and intuitive app building experience. Just describe your app idea - "I want a task management app with dark mode" - and watch as Claudable instantly generates the code and shows you a live preview of your working app. You can deploy your app to Vercel and integrate database with Supabase for free.
+ZhenSphere is a powerful Next.js-based web app builder that combines **C**laude Code's (Cursor CLI also supported!) advanced AI agent capabilities with **Lovable**'s simple and intuitive app building experience. Just describe your app idea - "I want a task management app with dark mode" - and watch as ZhenSphere instantly generates the code and shows you a live preview of your working app. You can deploy your app to Vercel and integrate database with Supabase for free.
 
 This open-source project empowers you to build and deploy professional web applications easily for **free**.
 
-How to start? Simply login to Claude Code (or Cursor CLI), start Claudable, and describe what you want to build. That's it. There is no additional subscription cost for app builder. 
+How to start? Simply login to Claude Code (or Cursor CLI), start ZhenSphere, and describe what you want to build. That's it. There is no additional subscription cost for app builder. 
 
 ## Features
-<img src="./assets/gif/Claudable_v2_cc_4_1080p.gif" alt="Claudable Demo" style="width: 100%; max-width: 800px;">
+<img src="./assets/gif/ZhenSphere_v2_cc_4_1080p.gif" alt="ZhenSphere Demo" style="width: 100%; max-width: 800px;">
 
 - **Powerful Agent Performance**: Leverage the full power of Claude Code and Cursor CLI Agent capabilities with native MCP support
-- **Natural Language to Code**: Simply describe what you want to build, and Claudable generates production-ready Next.js code
+- **Natural Language to Code**: Simply describe what you want to build, and ZhenSphere generates production-ready Next.js code
 - **Instant Preview**: See your changes immediately with hot-reload as AI builds your app
 - **Zero Setup, Instant Launch**: No complex sandboxes, no API key, no database headaches - just start building immediately
 - **Beautiful UI**: Generate beautiful UI with Tailwind CSS and shadcn/ui
@@ -42,14 +42,14 @@ How to start? Simply login to Claude Code (or Cursor CLI), start Claudable, and 
 ## Demo Examples
 
 ### Codex CLI Example
-<img src="./assets/gif/Claudable_v2_codex_1_1080p.gif" alt="Codex CLI Demo" style="width: 100%; max-width: 800px;">
+<img src="./assets/gif/ZhenSphere_v2_codex_1_1080p.gif" alt="Codex CLI Demo" style="width: 100%; max-width: 800px;">
 
 ### Qwen Code Example
-<img src="./assets/gif/Claudable_v2_qwen_1_1080p.gif" alt="Qwen Code Demo" style="width: 100%; max-width: 800px;">
+<img src="./assets/gif/ZhenSphere_v2_qwen_1_1080p.gif" alt="Qwen Code Demo" style="width: 100%; max-width: 800px;">
 
 ## Supported AI Coding Agents
 
-Claudable supports multiple AI coding agents, giving you the flexibility to choose the best tool for your needs:
+ZhenSphere supports multiple AI coding agents, giving you the flexibility to choose the best tool for your needs:
 
 - **Claude Code** - Anthropic's advanced AI coding agent
 - **Codex CLI** - OpenAI's lightweight coding agent
@@ -130,12 +130,12 @@ Before you begin, ensure you have the following installed:
 
 ## Quick Start
 
-Get Claudable running on your local machine in minutes:
+Get ZhenSphere running on your local machine in minutes:
 
 ```bash
 # Clone the repository
-git clone https://github.com/opactorai/Claudable.git
-cd Claudable
+git clone https://github.com/opactorai/ZhenSphere.git
+cd ZhenSphere
 
 # Install all dependencies (Node.js and Python)
 npm install
@@ -207,7 +207,7 @@ Access the interactive API documentation at http://localhost:8080/docs to explor
 
 ### Database Operations
 
-Claudable uses SQLite for local development and can be configured for PostgreSQL in production. The database automatically initializes on first run.
+ZhenSphere uses SQLite for local development and can be configured for PostgreSQL in production. The database automatically initializes on first run.
 
 ## Troubleshooting
 
@@ -245,7 +245,7 @@ If you encounter the error: `Error output dangerously skip permissions cannot be
    whoami
    
    # Change ownership of project directory to current user
-   sudo chown -R $(whoami):$(whoami) ~/Claudable
+   sudo chown -R $(whoami):$(whoami) ~/ZhenSphere
    ```
 3. If using WSL, make sure you're running Claude Code from your user account, not root
 4. Verify Claude Code installation permissions:
@@ -290,4 +290,4 @@ We're working hard to deliver the features you've been asking for. Stay tuned!
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=opactorai/Claudable&type=Date)](https://www.star-history.com/#opactorai/Claudable&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=opactorai/ZhenSphere&type=Date)](https://www.star-history.com/#opactorai/ZhenSphere&Date)
