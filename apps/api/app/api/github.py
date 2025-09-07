@@ -332,7 +332,7 @@ async def push_github_repository(project_id: str, db: Session = Depends(get_db))
     default_branch = connection.service_data.get("default_branch") or "main"
 
     # Commit any pending changes (optional harmless)
-    commit_all(repo_path, "Publish from Lovable UI")
+    commit_all(repo_path, "Publish from ZhenSphere UI")
 
     # Push
     result = push_to_remote(repo_path, "origin", default_branch)
