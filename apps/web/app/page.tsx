@@ -191,7 +191,7 @@ export default function HomePage() {
           const fallbackStatus: { [key: string]: { installed: boolean; checking: boolean; error: string; } } = {};
           assistantOptions.forEach(cli => {
             fallbackStatus[cli.id] = {
-              installed: cli.id === 'claude' || cli.id === 'cursor' || cli.id === 'codex' || cli.id === 'grok', // Default installed for known CLIs
+              installed: cli.id === 'claude' || cli.id === 'cursor' || cli.id === 'codex' || cli.id === 'qwen' || cli.id === 'gemini' || cli.id === 'grok', // Default installed for known CLIs
               checking: false,
               error: 'Unable to check installation status'
             };
@@ -204,7 +204,7 @@ export default function HomePage() {
         const errorStatus: { [key: string]: { installed: boolean; checking: boolean; error: string; } } = {};
         assistantOptions.forEach(cli => {
           errorStatus[cli.id] = {
-            installed: cli.id === 'claude' || cli.id === 'cursor' || cli.id === 'codex' || cli.id === 'grok', // Default installed for known CLIs
+           installed: cli.id === 'claude' || cli.id === 'cursor' || cli.id === 'codex' || cli.id === 'qwen' || cli.id === 'gemini' || cli.id === 'grok', // Default installed for known CLIs
             checking: false,
             error: 'Network error'
           };
