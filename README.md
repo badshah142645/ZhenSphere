@@ -20,7 +20,7 @@
 
 ## What is ZhenSphere?
 
-ZhenSphere is a powerful Next.js-based web app builder that combines **C**laude Code's (Cursor CLI also supported!) advanced AI agent capabilities with **ZhenSphere**'s simple and intuitive app building experience. Just describe your app idea - "I want a task management app with dark mode" - and watch as ZhenSphere instantly generates the code and shows you a live preview of your working app. You can deploy your app to Vercel and integrate database with Supabase for free.
+ZhenSphere is a powerful Next.js-based web app builder that combines **Zheh**Sphere Code's (Cursor CLI also supported!) advanced AI agent capabilities with **ZhenSphere**'s simple and intuitive app building experience. Just describe your app idea - "I want a task management app with dark mode" - and watch as ZhenSphere instantly generates the code and shows you a live preview of your working app. You can deploy your app to Vercel and integrate database with Supabase for free.
 
 This open-source project empowers you to build and deploy professional web applications easily for **free**.
 

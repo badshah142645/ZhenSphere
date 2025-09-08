@@ -23,7 +23,8 @@ const assistantBrandColors: { [key: string]: string } = {
   cursor: '#6B7280',
   qwen: '#A855F7',
   gemini: '#4285F4',
-  codex: '#000000'
+  codex: '#000000',
+  grok: '#FF6B35'
 };
 
 // Function to convert hex to CSS filter for tinting white images

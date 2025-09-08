@@ -101,6 +101,22 @@ const CLI_OPTIONS: CLIOption[] = [
     models: [
       { id: 'gpt-5', name: 'GPT-5' }
     ]
+  },
+  {
+    id: 'grok',
+    name: 'Grok CLI',
+    icon: '/grok.png',
+    description: 'Grok CLI powered by xAI',
+    color: 'from-orange-400 to-red-500',
+    brandColor: '#FF6B35',
+    downloadUrl: 'https://github.com/vibe-kit/grok-cli',
+    installCommand: 'npm install -g @vibe-kit/grok-cli',
+    enabled: true,
+    models: [
+      { id: 'grok-4-latest', name: 'Grok 4 Latest' },
+      { id: 'grok-3-latest', name: 'Grok 3 Latest' },
+      { id: 'grok-3-fast', name: 'Grok 3 Fast' }
+    ]
   }
 ];
 
@@ -573,6 +589,9 @@ export default function GlobalSettings({ isOpen, onClose, initialTab = 'general'
                             )}
                             {cli.id === 'gemini' && (
                               <img src="/gemini.png" alt="Gemini" className="w-8 h-8" />
+                            )}
+                            {cli.id === 'grok' && (
+                              <img src="/grok.png" alt="Grok" className="w-8 h-8" />
                             )}
                           </div>
                           <div className={`flex-1 min-w-0 ${!isInstalled ? 'opacity-40' : ''}`}>

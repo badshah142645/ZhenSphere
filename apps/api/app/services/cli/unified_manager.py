@@ -9,7 +9,7 @@ Implementations live in:
 """
 
 from .base import BaseCLI, CLIType, MODEL_MAPPING, get_project_root, get_display_path
-from .adapters import ClaudeCodeCLI, CursorAgentCLI, CodexCLI, QwenCLI, GeminiCLI
+from .adapters import ClaudeCodeCLI, CursorAgentCLI, CodexCLI, QwenCLI, GeminiCLI, GrokCLI
 from .manager import UnifiedCLIManager
 
 __all__ = [

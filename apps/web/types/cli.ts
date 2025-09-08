@@ -100,5 +100,19 @@ export const CLI_OPTIONS: CLIOption[] = [
     models: [
       { id: 'gpt-5', name: 'GPT-5' }
     ]
+  },
+  {
+    id: 'grok',
+    name: 'Grok',
+    description: 'Grok CLI powered by xAI',
+    icon: '/grok.png',
+    available: true,
+    configured: false,
+    enabled: true,
+    models: [
+      { id: 'grok-4-latest', name: 'Grok 4 Latest' },
+      { id: 'grok-3-latest', name: 'Grok 3 Latest' },
+      { id: 'grok-3-fast', name: 'Grok 3 Fast' }
+    ]
   }
 ];

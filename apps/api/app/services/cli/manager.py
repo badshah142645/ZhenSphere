@@ -12,7 +12,7 @@ from app.core.websocket.manager import manager as ws_manager
 from app.models.messages import Message
 
 from .base import CLIType
-from .adapters import ClaudeCodeCLI, CursorAgentCLI, CodexCLI, QwenCLI, GeminiCLI
+from .adapters import ClaudeCodeCLI, CursorAgentCLI, CodexCLI, QwenCLI, GeminiCLI, GrokCLI
 
 
 class UnifiedCLIManager:
@@ -39,6 +39,7 @@ class UnifiedCLIManager:
             CLIType.CODEX: CodexCLI(db_session=db),
             CLIType.QWEN: QwenCLI(db_session=db),
             CLIType.GEMINI: GeminiCLI(db_session=db),
+            CLIType.GROK: GrokCLI(db_session=db),
         }
 
     async def execute_instruction(

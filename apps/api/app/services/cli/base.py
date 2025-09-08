@@ -99,6 +99,12 @@ MODEL_MAPPING: Dict[str, Dict[str, str]] = {
         "gemini-2.5-pro": "gemini-2.5-pro",
         "gemini-2.5-flash": "gemini-2.5-flash",
     },
+    "grok": {
+        "grok-4-latest": "grok-4-latest",
+        "grok-3-latest": "grok-3-latest",
+        "grok-3-fast": "grok-3-fast",
+        "grok-3-mini-fast": "grok-3-mini-fast",
+    },
 }
 
 
@@ -110,6 +116,7 @@ class CLIType(str, Enum):
     CODEX = "codex"
     QWEN = "qwen"
     GEMINI = "gemini"
+    GROK = "grok"
 
 
 class BaseCLI(ABC):

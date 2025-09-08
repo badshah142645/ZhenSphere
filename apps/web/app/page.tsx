@@ -38,7 +38,8 @@ const assistantBrandColors: { [key: string]: string } = {
   cursor: '#6B7280',
   qwen: '#A855F7',
   gemini: '#4285F4',
-  codex: '#000000'
+  codex: '#000000',
+  grok: '#FF6B35'
 };
 
 export default function HomePage() {
@@ -78,6 +79,11 @@ export default function HomePage() {
     gemini: [
       { id: 'gemini-2.5-pro', name: 'Gemini 2.5 Pro' },
       { id: 'gemini-2.5-flash', name: 'Gemini 2.5 Flash' }
+    ],
+    grok: [
+      { id: 'grok-4-latest', name: 'Grok 4 Latest' },
+      { id: 'grok-3-latest', name: 'Grok 3 Latest' },
+      { id: 'grok-3-fast', name: 'Grok 3 Fast' }
     ]
   };
   
@@ -132,6 +138,7 @@ export default function HomePage() {
       else if (cli === 'codex') setSelectedModel('gpt-5');
       else if (cli === 'qwen') setSelectedModel('qwen3-coder-plus');
       else if (cli === 'gemini') setSelectedModel('gemini-2.5-pro');
+      else if (cli === 'grok') setSelectedModel('grok-4-latest');
     }
   }, [globalSettings, usingGlobalDefaults, isInitialLoad]);
   
@@ -184,7 +191,7 @@ export default function HomePage() {
           const fallbackStatus: { [key: string]: { installed: boolean; checking: boolean; error: string; } } = {};
           assistantOptions.forEach(cli => {
             fallbackStatus[cli.id] = {
-              installed: cli.id === 'claude' || cli.id === 'cursor' || cli.id === 'codex', // Default installed for known CLIs
+              installed: cli.id === 'claude' || cli.id === 'cursor' || cli.id === 'codex' || cli.id === 'grok', // Default installed for known CLIs
               checking: false,
               error: 'Unable to check installation status'
             };
@@ -197,7 +204,7 @@ export default function HomePage() {
         const errorStatus: { [key: string]: { installed: boolean; checking: boolean; error: string; } } = {};
         assistantOptions.forEach(cli => {
           errorStatus[cli.id] = {
-            installed: cli.id === 'claude' || cli.id === 'cursor' || cli.id === 'codex', // Default installed for known CLIs
+            installed: cli.id === 'claude' || cli.id === 'cursor' || cli.id === 'codex' || cli.id === 'grok', // Default installed for known CLIs
             checking: false,
             error: 'Network error'
           };
@@ -390,7 +397,7 @@ export default function HomePage() {
 
   // Handle files (for both drag drop and file input)
   const handleFiles = async (files: FileList) => {
-    if (selectedAssistant === 'cursor') return;
+    if (selectedAssistant === 'cursor' || selectedAssistant === 'grok') return;
     
     setIsUploading(true);
     
@@ -438,7 +445,7 @@ export default function HomePage() {
   const handleDragEnter = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (selectedAssistant !== 'cursor') {
+    if (selectedAssistant !== 'cursor' && selectedAssistant !== 'grok') {
       setIsDragOver(true);
     }
   };
@@ -455,7 +462,7 @@ export default function HomePage() {
   const handleDragOver = (e: React.DragEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (selectedAssistant !== 'cursor') {
+    if (selectedAssistant !== 'cursor' && selectedAssistant !== 'grok') {
       e.dataTransfer.dropEffect = 'copy';
     } else {
       e.dataTransfer.dropEffect = 'none';
@@ -467,7 +474,7 @@ export default function HomePage() {
     e.stopPropagation();
     setIsDragOver(false);
 
-    if (selectedAssistant === 'cursor') return;
+    if (selectedAssistant === 'cursor' || selectedAssistant === 'grok') return;
 
     const files = e.dataTransfer.files;
     if (files.length > 0) {
@@ -671,12 +678,12 @@ export default function HomePage() {
   const handleAssistantChange = (assistant: string) => {
     // Don't allow selecting uninstalled CLIs
     if (!cliStatus[assistant]?.installed) return;
-    
+
     console.log('🔧 Assistant changing from', selectedAssistant, 'to', assistant);
     setUsingGlobalDefaults(false);
     setIsInitialLoad(false);
     setSelectedAssistant(assistant);
-    
+
     // Set default model for each assistant
     if (assistant === 'claude') {
       setSelectedModel('claude-sonnet-4');
@@ -688,8 +695,10 @@ export default function HomePage() {
       setSelectedModel('qwen3-coder-plus');
     } else if (assistant === 'gemini') {
       setSelectedModel('gemini-2.5-pro');
+    } else if (assistant === 'grok') {
+      setSelectedModel('grok-4-latest');
     }
-    
+
     setShowAssistantDropdown(false);
   };
 
@@ -705,7 +714,8 @@ export default function HomePage() {
     { id: 'codex', name: 'Codex CLI', icon: '/oai.png' },
     { id: 'cursor', name: 'Cursor Agent', icon: '/cursor.png' },
     { id: 'gemini', name: 'Gemini CLI', icon: '/gemini.png' },
-    { id: 'qwen', name: 'Qwen Coder', icon: '/qwen.png' }
+    { id: 'qwen', name: 'Qwen Coder', icon: '/qwen.png' },
+    { id: 'grok', name: 'Grok CLI', icon: '/grok.png' }
   ];
 
   return (
@@ -889,11 +899,12 @@ export default function HomePage() {
                                     color: assistantBrandColors[project.preferred_cli] ? `${assistantBrandColors[project.preferred_cli]}CC` : '#6B7280'
                                   }}
                                 >
-                                  {project.preferred_cli === 'claude' ? 'Claude' : 
-                                   project.preferred_cli === 'cursor' ? 'Cursor' : 
-                                   project.preferred_cli === 'qwen' ? 'Qwen' : 
-                                   project.preferred_cli === 'gemini' ? 'Gemini' : 
-                                   project.preferred_cli === 'codex' ? 'Codex' : 
+                                  {project.preferred_cli === 'claude' ? 'Claude' :
+                                   project.preferred_cli === 'cursor' ? 'Cursor' :
+                                   project.preferred_cli === 'qwen' ? 'Qwen' :
+                                   project.preferred_cli === 'gemini' ? 'Gemini' :
+                                   project.preferred_cli === 'grok' ? 'Grok' :
+                                   project.preferred_cli === 'codex' ? 'Codex' :
                                    project.preferred_cli}
                                 </span>
                               </div>
@@ -1035,7 +1046,7 @@ export default function HomePage() {
               </div>
               
               {/* Drag overlay */}
-              {isDragOver && selectedAssistant !== 'cursor' && (
+              {isDragOver && selectedAssistant !== 'cursor' && selectedAssistant !== 'grok' && (
                 <div className="absolute inset-0 bg-[#DE7356]/10 dark:bg-[#DE7356]/20 rounded-[28px] flex items-center justify-center z-10 border-2 border-dashed border-[#DE7356]">
                   <div className="text-center">
                     <div className="text-3xl mb-3">📸</div>
@@ -1052,10 +1063,10 @@ export default function HomePage() {
               <div className="flex gap-1 flex-wrap items-center">
                 {/* Image Upload Button */}
                 <div className="flex items-center gap-2">
-                  {selectedAssistant === 'cursor' || selectedAssistant === 'qwen' ? (
-                    <div 
+                  {selectedAssistant === 'cursor' || selectedAssistant === 'qwen' || selectedAssistant === 'grok' ? (
+                    <div
                       className="flex items-center justify-center w-8 h-8 text-gray-300 dark:text-gray-600 cursor-not-allowed opacity-50 rounded-full"
-                      title={selectedAssistant === 'qwen' ? "Qwen Coder doesn't support image input" : "Cursor CLI doesn't support image input"}
+                      title={selectedAssistant === 'qwen' ? "Qwen Coder doesn't support image input" : selectedAssistant === 'grok' ? "Grok CLI doesn't support image input" : "Cursor CLI doesn't support image input"}
                     >
                       <ImageIcon className="h-4 w-4" />
                     </div>
@@ -1088,14 +1099,14 @@ export default function HomePage() {
                     className="justify-center whitespace-nowrap text-sm font-medium transition-colors duration-100 ease-in-out focus-visible:outline-none disabled:pointer-events-none disabled:opacity-50 border border-gray-200/50 dark:border-white/5 bg-transparent shadow-sm hover:bg-gray-50 dark:hover:bg-white/5 hover:border-gray-300/50 dark:hover:border-white/10 px-3 py-2 flex h-8 items-center gap-1 rounded-full text-gray-700 dark:text-white/80 hover:text-gray-900 dark:hover:text-white focus-visible:ring-0"
                   >
                     <div className="w-4 h-4 rounded overflow-hidden">
-                      <img 
-                        src={selectedAssistant === 'claude' ? '/claude.png' : selectedAssistant === 'cursor' ? '/cursor.png' : selectedAssistant === 'qwen' ? '/qwen.png' : selectedAssistant === 'gemini' ? '/gemini.png' : '/oai.png'} 
-                        alt={selectedAssistant === 'claude' ? 'Claude' : selectedAssistant === 'cursor' ? 'Cursor' : selectedAssistant === 'qwen' ? 'Qwen' : selectedAssistant === 'gemini' ? 'Gemini' : 'Codex'}
+                      <img
+                        src={selectedAssistant === 'claude' ? '/claude.png' : selectedAssistant === 'cursor' ? '/cursor.png' : selectedAssistant === 'qwen' ? '/qwen.png' : selectedAssistant === 'gemini' ? '/gemini.png' : selectedAssistant === 'grok' ? '/grok.png' : '/oai.png'}
+                        alt={selectedAssistant === 'claude' ? 'Claude' : selectedAssistant === 'cursor' ? 'Cursor' : selectedAssistant === 'qwen' ? 'Qwen' : selectedAssistant === 'gemini' ? 'Gemini' : selectedAssistant === 'grok' ? 'Grok' : 'Codex'}
                         className="w-full h-full object-contain"
                       />
                     </div>
                     <span className="hidden md:flex text-sm font-medium">
-                      {selectedAssistant === 'claude' ? 'Claude Code' : selectedAssistant === 'cursor' ? 'Cursor Agent' : selectedAssistant === 'qwen' ? 'Qwen Coder' : selectedAssistant === 'gemini' ? 'Gemini CLI' : 'Codex CLI'}
+                      {selectedAssistant === 'claude' ? 'Claude Code' : selectedAssistant === 'cursor' ? 'Cursor Agent' : selectedAssistant === 'qwen' ? 'Qwen Coder' : selectedAssistant === 'gemini' ? 'Gemini CLI' : selectedAssistant === 'grok' ? 'Grok CLI' : 'Codex CLI'}
                     </span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 -960 960 960" className="shrink-0 h-3 w-3 rotate-90" fill="currentColor">
                       <path d="M530-481 353-658q-9-9-8.5-21t9.5-21 21.5-9 21.5 9l198 198q5 5 7 10t2 11-2 11-7 10L396-261q-9 9-21 8.5t-21-9.5-9-21.5 9-21.5z"/>
@@ -1161,6 +1172,12 @@ export default function HomePage() {
                           return 'Gemini 2.5 Pro';
                         } else if (selectedAssistant === 'gemini' && selectedModel === 'gemini-2.5-flash') {
                           return 'Gemini 2.5 Flash';
+                        } else if (selectedAssistant === 'grok' && selectedModel === 'grok-4-latest') {
+                          return 'Grok 4 Latest';
+                        } else if (selectedAssistant === 'grok' && selectedModel === 'grok-3-latest') {
+                          return 'Grok 3 Latest';
+                        } else if (selectedAssistant === 'grok' && selectedModel === 'grok-3-fast') {
+                          return 'Grok 3 Fast';
                         }
                       }
                       
