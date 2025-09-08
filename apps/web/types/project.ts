@@ -30,4 +30,4 @@ export interface ProjectSettings {
   selected_model?: string;
 }
 
-export type CLIType = 'claude' | 'cursor' | 'qwen' | 'gemini' | 'codex';
+export type CLIType = 'claude' | 'cursor' | 'qwen' | 'gemini' | 'grok' |'codex';
