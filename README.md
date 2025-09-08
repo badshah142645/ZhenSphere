@@ -20,16 +20,16 @@
 
 ## What is ZhenSphere?
 
-ZhenSphere is a powerful Next.js-based web app builder that combines **Zheh**Sphere Code's (Cursor CLI also supported!) advanced AI agent capabilities with **ZhenSphere**'s simple and intuitive app building experience. Just describe your app idea - "I want a task management app with dark mode" - and watch as ZhenSphere instantly generates the code and shows you a live preview of your working app. You can deploy your app to Vercel and integrate database with Supabase for free.
+ZhenSphere is a powerful Next.js-based web app builder that combines **multiple AI coding agents** (Claude Code, Cursor CLI, Codex CLI, Gemini CLI, Qwen Code, and Grok CLI) with **ZhenSphere**'s simple and intuitive app building experience. Just describe your app idea - "I want a task management app with dark mode" - and watch as ZhenSphere instantly generates the code and shows you a live preview of your working app. You can deploy your app to Vercel and integrate database with Supabase for free.
 
 This open-source project empowers you to build and deploy professional web applications easily for **free**.
 
-How to start? Simply login to Claude Code (or Cursor CLI), start ZhenSphere, and describe what you want to build. That's it. There is no additional subscription cost for app builder. 
+How to start? Simply login to any of the supported AI coding agents, start ZhenSphere, and describe what you want to build. That's it. There is no additional subscription cost for app builder.
 
 ## Features
 <img src="./assets/gif/ZhenSphere_v2_cc_4_1080p.gif" alt="ZhenSphere Demo" style="width: 100%; max-width: 800px;">
 
-- **Powerful Agent Performance**: Leverage the full power of Claude Code and Cursor CLI Agent capabilities with native MCP support
+- **Multiple AI Agents**: Choose from 6 powerful AI coding agents (Claude Code, Cursor CLI, Codex CLI, Gemini CLI, Qwen Code, Grok CLI) with native MCP support
 - **Natural Language to Code**: Simply describe what you want to build, and ZhenSphere generates production-ready Next.js code
 - **Instant Preview**: See your changes immediately with hot-reload as AI builds your app
 - **Zero Setup, Instant Launch**: No complex sandboxes, no API key, no database headaches - just start building immediately
@@ -56,6 +56,7 @@ ZhenSphere supports multiple AI coding agents, giving you the flexibility to cho
 - **Cursor CLI** - Powerful multi-model AI agent
 - **Gemini CLI** - Google's open-source AI agent
 - **Qwen Code** - Alibaba's open-source coding CLI
+- **Grok CLI** - xAI's powerful AI coding agent
 
 ### Claude Code (Recommended)
 **[Claude Code](https://docs.anthropic.com/en/docs/claude-code/setup)** - Anthropic's advanced AI coding agent with Claude Opus 4.1
@@ -112,6 +113,17 @@ ZhenSphere supports multiple AI coding agents, giving you the flexibility to cho
   qwen --version
   ```
 
+### Grok CLI
+**[Grok CLI](https://github.com/vibe-kit/grok-cli)** - xAI's powerful AI coding agent with Grok models
+- **Features**: Advanced reasoning capabilities, MCP support, thought process streaming, multi-model support
+- **Context**: Model dependent (up to 1M+ tokens)
+- **Pricing**: Free with xAI account
+- **Installation**:
+  ```bash
+  npm install -g @vibe-kit/grok-cli
+  grok --help
+  ```
+
 ## Technology Stack
 
 **Database & Deployment:**
@@ -125,7 +137,13 @@ ZhenSphere supports multiple AI coding agents, giving you the flexibility to cho
 Before you begin, ensure you have the following installed:
 - Node.js 18+
 - Python 3.10+
-- Claude Code or Cursor CLI (already logged in)
+- One of the supported AI coding agents (already logged in):
+  - Claude Code
+  - Cursor CLI
+  - Codex CLI
+  - Gemini CLI
+  - Qwen Code
+  - Grok CLI
 - Git
 
 ## Quick Start
@@ -195,7 +213,7 @@ npm run clean       # Remove all dependencies and virtual environments
 
 ### Getting Started with Development
 
-1. **Connect Claude Code**: Link your Claude Code CLI to enable AI assistance
+1. **Connect AI Agent**: Choose and connect one of the supported AI coding agents (Claude Code, Cursor CLI, Codex CLI, Gemini CLI, Qwen Code, or Grok CLI)
 2. **Describe Your Project**: Use natural language to describe what you want to build
 3. **AI Generation**: Watch as the AI generates your project structure and code
 4. **Live Preview**: See changes instantly with hot reload functionality
@@ -279,7 +297,6 @@ MIT License.
 
 ## Upcoming Features
 These features are in development and will be opened soon.
-- **New CLI Agents** - Trust us, you're going to LOVE this!
 - **Checkpoints for Chat** - Save and restore conversation/codebase states
 - **Advanced MCP Integration** - Native integration with MCP
 - **Enhanced Agent System** - Subagents, AGENTS.md integration
